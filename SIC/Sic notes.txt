@@ -1,0 +1,65 @@
+
+                                                                       <<<<<PASS1>>>>>
+>FIRST 
+We used the hashmap because it stores in it two different data types,since we needed to store the:
+
+ 1)instruction set which includes name of the instruction and the opcode,
+ 2)Symbol table for the address and the name of the instruction.
+
+ and an arraylist for the address location and counter for index
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ >SECOND
+
+--using the method put() we filled the hashmap of the instruction set.
+--used the method Integer.parseInt() to convert from hexadecimal to decimal,because later on we're gonna use the string format method that converts to hexadecimal to take only 2 bits
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--String.format("%04X", locCtr)==> used this format to convert from decimal to hexadecimal
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+locCtr==>this variable stores in it the address of each instructio
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  LocCtr-->INTEGR
+
+  <<<String.format("%04X", Integer.parseInt(Integer.toHexString(locCtr), 16)))>>>
+
+--Integer.toHexString(locCtr)==>converts the location counter from integer to string(hexa) because Integer.parseInt() takes two paramaters,
+  string and the value of the base that i want to convert to
+
+--Integer.parseInt(String(hexa), 16)==>returns the given string in hexa to decimal in integer
+
+--String.format("%04X", Integer represented in decimal)==>returns the given integr to hexa string represented in 4 bits
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PROG1 START 0000
+WREC LDX ZERO
+WLOOP TD OUTPUT
+JEQ WLOOP
+LDCH RECORD,X
+WD OUTPUT
+TIX LENGTH
+JLT WLOOP
+ZERO WORD 100
+LENGTH WORD 3
+OUTPUT BYTE X'1F'
+RECORD RESB 100
+EOF BYTE C'ABC'
+END 0000
+------------------------
+------------------------
+HW1B START 0030
+WREC LDX ZERO
+WLOOP TD OUTPUT
+JEQ WLOOP
+LDCH RECORD,X
+WD OUTPUT
+TIX LENGTH
+JLT WLOOP
+ZERO WORD 0
+LENGTH WORD 1
+OUTPUT BYTE X'05'
+RECORD RESB 100
+EOF BYTE C'EOF'
+END 0030
+
